@@ -41,10 +41,10 @@
         <!-- 项目经历 -->
         <div class="project">项目经历</div>
         <ul class="project_index">
-          <li v-for="project in projects" :key="project">
+          <li v-for="project in projects" :key="project" class="project_index_li">
             <div class="time">
               {{project.time}}
-              <span class="project_name"><a href="https://github.com/zero0011/imitate_juejin" target="_blank">{{project.title}}</a></span>
+              <span class="project_name"><a :href="project.href" target="_blank">{{project.title}}</a></span>
             </div>
             <div class="project_index_skill">
               技术栈 :
@@ -53,7 +53,6 @@
             <ul class="project_includes">
               <li v-for="include in project.includes" :key="include">
                 {{include.main}}
-                
               </li>
             </ul>
           </li>
@@ -100,7 +99,28 @@ export default {
       ],
       projects: [
         {
+          time : '2020.3 - 2020.3',
+          href : 'https://github.com/zero0011/Puzzle',
+          title : '拼图游戏',
+          skill : 'vue',
+          includes : [
+            {
+              main : '该项目是一个 用 vue 写拼图小游戏'
+            },
+            {
+              main : '已经实现的功能有:1.普通拼图功能2.自动拼图功能'
+            },
+            {
+              main : '难点:8数码问题'
+            },
+            {
+              main : '解决:1.先判断该排列方式是否有解2.若有解,则通过BFS查找复原路径'
+            }
+          ]
+        },
+        {
           time: "2020.3 - 2020.4",
+          href : 'https://github.com/zero0011/imitate_juejin',
           title: "仿掘金",
           skill_details: "vue + vuex + express + Sequelize + mysql",
           includes : [
@@ -211,6 +231,9 @@ export default {
   font-size: 15px;
   font-weight: 1000;
   list-style: none;
+}
+.project_index_li {
+  margin-top: 20px;
 }
 .project_name {
   margin-left: 550px;
