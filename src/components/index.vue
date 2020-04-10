@@ -108,10 +108,16 @@ export default {
               main : '该项目是一个 用 vue 写拼图小游戏'
             },
             {
-              main : '已经实现的功能有:1.普通拼图功能2.自动拼图功能'
+              main : '已经实现的功能有:1.普通拼图功能2.自动拼图功能3. 游戏聊天室功能'
             },
             {
-              main : '难点:8数码问题'
+              main : '聊天室采用WebSocket技术,属于服务端推送技术.'
+            },
+            {
+              main: '具体是使用socket.io,它是将websocket和polling机制封装成了通用的接口'
+            },
+            {
+              main : '难点:自动拼图功能(8数码问题)'
             },
             {
               main : '解决:1.先判断该排列方式是否有解2.若有解,则通过BFS查找复原路径'
@@ -233,7 +239,10 @@ export default {
   list-style: none;
 }
 .project_index_li {
-  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.project_index_li:last-child {
+  margin-bottom: 50px;
 }
 .project_name {
   margin-left: 550px;
